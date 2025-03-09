@@ -23,14 +23,14 @@ pipeline {
         stage('dockerImageTag'){
             steps{
                 sh 'docker tag jenkins-ci:latest 474668408569.dkr.ecr.us-east-1.amazonaws.com/jenkins-ci:latest'
-                sh 'docker tag image-version 474668408569.dkr.ecr.us-east-1.amazonaws.com/jenkins-ci:v1.$BUILD-NUMBER'
+                sh 'docker tag image-version 474668408569.dkr.ecr.us-east-1.amazonaws.com/jenkins-ci:v1.$BUILD_NUMBER'
             }
         }
 
     stage ('pushImage'){
         steps{
             sh 'docker push 474668408569.dkr.ecr.us-east-1.amazonaws.com/jenkins-ci:latest'
-            sh 'docker push 474668408569.dkr.ecr.us-east-1.amazonaws.com/jenkins-ci:v1.$BUILD-NUMBER'
+            sh 'docker push 474668408569.dkr.ecr.us-east-1.amazonaws.com/jenkins-ci:v1.$BUILD_NUMBER'
         }
     }    
 
