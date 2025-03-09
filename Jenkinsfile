@@ -4,6 +4,7 @@ pipeline {
         stage ('clone'){
             steps {
                 sh 'echo "clone"'
+                sh 'uname -r'
             }
         }
         stage('test'){
@@ -16,6 +17,6 @@ pipeline {
             sh 'touch text-$BUILD_ID'
         }
     }    
-    
+
     }
 }
